@@ -1,0 +1,187 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@keyframes move-bg {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+@layer base {
+  :root {
+    --background: 259 35% 12%;
+    --foreground: 260 40% 95%;
+    --card: 262 30% 18%;
+    --card-foreground: 260 40% 95%;
+    --popover: 259 35% 10%;
+    --popover-foreground: 260 40% 95%;
+    --primary: 279 73% 27%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 322 86% 32%;
+    --secondary-foreground: 260 40% 95%;
+    --muted: 262 40% 30%;
+    --muted-foreground: 260 20% 65%;
+    --accent: 330 80% 60%;
+    --accent-foreground: 330 100% 15%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 262 30% 35%;
+    --input: 262 40% 25%;
+    --ring: 330 80% 60%;
+    --chart-1: 12 76% 61%;
+    --chart-2: 173 58% 39%;
+    --chart-3: 197 37% 24%;
+    --chart-4: 43 74% 66%;
+    --chart-5: 27 87% 67%;
+    --radius: 0.75rem;
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+  .dark {
+    --background: 259 35% 12%;
+    --foreground: 260 40% 95%;
+    --card: 262 30% 18%;
+    --card-foreground: 260 40% 95%;
+    --popover: 259 35% 10%;
+    --popover-foreground: 260 40% 95%;
+    --primary: 279 73% 27%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 322 86% 32%;
+    --secondary-foreground: 260 40% 95%;
+    --muted: 262 40% 30%;
+    --muted-foreground: 260 20% 65%;
+    --accent: 330 80% 60%;
+    --accent-foreground: 330 100% 15%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 262 30% 35%;
+    --input: 262 40% 25%;
+    --ring: 330 80% 60%;
+    --chart-1: 220 70% 50%;
+    --chart-2: 160 60% 45%;
+    --chart-3: 30 80% 55%;
+    --chart-4: 280 65% 60%;
+    --chart-5: 340 75% 55%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+
+@layer utilities {
+  @keyframes wave-animation {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+
+  .wavy-background {
+    background: 
+      radial-gradient(circle at 25% 30%, hsl(45 100% 71% / 0.2), transparent 25%),
+      radial-gradient(circle at 75% 70%, hsl(45 100% 71% / 0.15), transparent 25%),
+      radial-gradient(circle at 10% 80%, hsl(45 100% 71% / 0.2), transparent 20%),
+      radial-gradient(circle at 80% 10%, hsl(45 100% 71% / 0.15), transparent 20%),
+      radial-gradient(circle at 50% 50%, hsl(var(--background)) 0%, hsl(var(--background)) 20%, transparent 70%),
+      hsl(var(--card));
+    background-size: 400% 400%;
+    animation: wave-animation 15s ease-in-out infinite;
+  }
+
+  .text-gradient {
+    background: linear-gradient(90deg, #E9D5FF, #93C5FD);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
+  }
+
+  .splash-heading-underline::after {
+    content: '';
+    display: block;
+    width: 32px;
+    height: 2px;
+    margin: 12px auto 0;
+    background-color: #8B5CF6;
+    border-radius: 8px;
+    transform: scaleX(0);
+    animation: scale-underline 280ms ease-out forwards;
+    animation-delay: 200ms; /* Delay to start after text appears */
+  }
+
+  @keyframes scale-underline {
+    to {
+      transform: scaleX(1);
+    }
+  }
+
+  .splash-heading {
+    animation: shimmer 8s ease-in-out infinite;
+  }
+
+  @keyframes shimmer {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .splash-heading-underline::after {
+      animation: none;
+      transform: scaleX(1);
+    }
+    .splash-heading {
+      animation: none;
+    }
+  }
+  .btn-glass {
+    @apply bg-white/10 border-white/20 text-white backdrop-blur-lg;
+    -webkit-backdrop-filter: blur(16px); /* Safari */
+  }
+  .nav-item {
+    @apply transition-transform duration-300;
+    transition-timing-function: cubic-bezier(.8,-0.6,.2,1.5);
+  }
+  .nav-item:hover {
+    transform: scale(1.12);
+  }
+}
+
+    

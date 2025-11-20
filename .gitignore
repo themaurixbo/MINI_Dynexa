@@ -1,0 +1,45 @@
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
+lemon miniapp/node_modules
+lemon miniapp/.pnp
+lemon miniapp/.pnp.*
+lemon miniapp/.yarn/*
+!lemon miniapp/.yarn/patches
+!lemon miniapp/.yarn/plugins
+!lemon miniapp/.yarn/releases
+!lemon miniapp/.yarn/versions
+
+# testing
+lemon miniapp/coverage
+
+# next.js
+lemon miniapp/.next/
+lemon miniapp/out/
+
+# production
+lemon miniapp/build
+
+# misc
+lemon miniapp/.DS_Store
+lemon miniapp/*.pem
+
+# debug
+lemon miniapp/npm-debug.log*
+lemon miniapp/yarn-debug.log*
+lemon miniapp/yarn-error.log*
+lemon miniapp/.pnpm-debug.log*
+
+# vercel
+lemon miniapp/.vercel
+
+# typescript
+lemon miniapp/*.tsbuildinfo
+lemon miniapp/next-env.d.ts
+
+lemon miniapp/.genkit/*
+lemon miniapp/.env*
+
+# firebase
+lemon miniapp/firebase-debug.log
+lemon miniapp/firestore-debug.log
