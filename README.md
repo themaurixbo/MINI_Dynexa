@@ -7,7 +7,7 @@
 
 ## What it does
 
-**DYNEXA Lemon Rewards** is a Web3 rewards infrastructure designed for **local merchants and everyday users** in Argentina.
+**DYNEXA Lemon Rewards** is a Web3 rewards infrastructure designed for **local merchants and everyday users** in Argentina & LATAM.
 
 - Merchants fund reward campaigns in ARS/crypto through **Lemon**.
 - The funds are bridged to **Scroll** and stored in a per-merchant reward pool.
